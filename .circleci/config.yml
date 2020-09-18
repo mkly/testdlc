@@ -9,7 +9,7 @@ jobs:
       - setup_remote_docker: 
           docker_layer_caching: true
           version: 19.03.12
-      - run: DOCKER_BUILDKI=1 docker build .
+      - run: DOCKER_BUILDKIT=1 docker build .
 
 workflows:
   wf:
