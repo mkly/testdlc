@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  testcache:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - setup_remote_docker: 
+          docker_layer_caching: true
+      - run: docker build .
+
+workflows:
+  wf:
+    jobs:
+      - testcache
